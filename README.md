@@ -8,7 +8,7 @@ Installation
 ------------
 Add the `<StoreKit/StoreKit.h>` framework and drag the FMPurchaseManager class files into your project.
 
-Setup
+Usage
 -----
 (see sample Xcode project `/Demo`)
 
