@@ -1,0 +1,311 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14400C5C15CA31F8004F34FC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14400C5B15CA31F8004F34FC /* UIKit.framework */; };
+		14400C5E15CA31F8004F34FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14400C5D15CA31F8004F34FC /* Foundation.framework */; };
+		14400C6015CA31F8004F34FC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14400C5F15CA31F8004F34FC /* CoreGraphics.framework */; };
+		14400C6615CA31F8004F34FC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 14400C6415CA31F8004F34FC /* InfoPlist.strings */; };
+		14400C6815CA31F8004F34FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14400C6715CA31F8004F34FC /* main.m */; };
+		14400C6C15CA31F8004F34FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14400C6B15CA31F8004F34FC /* AppDelegate.m */; };
+		14400C6F15CA31F8004F34FC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14400C6D15CA31F8004F34FC /* MainStoryboard.storyboard */; };
+		14400C7915CA320E004F34FC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14400C7815CA320E004F34FC /* StoreKit.framework */; };
+		14400C7D15CA3218004F34FC /* FMPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14400C7C15CA3218004F34FC /* FMPurchaseManager.m */; };
+		14400C8D15CA42D4004F34FC /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14400C8C15CA42D4004F34FC /* PurchaseViewController.m */; };
+		14400C9015CA474C004F34FC /* SKProduct+FormattedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 14400C8F15CA474B004F34FC /* SKProduct+FormattedPrice.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		14400C5715CA31F8004F34FC /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		14400C5B15CA31F8004F34FC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		14400C5D15CA31F8004F34FC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		14400C5F15CA31F8004F34FC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		14400C6315CA31F8004F34FC /* Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Demo-Info.plist"; sourceTree = "<group>"; };
+		14400C6515CA31F8004F34FC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		14400C6715CA31F8004F34FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		14400C6915CA31F8004F34FC /* Demo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo-Prefix.pch"; sourceTree = "<group>"; };
+		14400C6A15CA31F8004F34FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		14400C6B15CA31F8004F34FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		14400C6E15CA31F8004F34FC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		14400C7815CA320E004F34FC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		14400C7B15CA3218004F34FC /* FMPurchaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMPurchaseManager.h; sourceTree = "<group>"; };
+		14400C7C15CA3218004F34FC /* FMPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMPurchaseManager.m; sourceTree = "<group>"; };
+		14400C8B15CA42D4004F34FC /* PurchaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseViewController.h; sourceTree = "<group>"; };
+		14400C8C15CA42D4004F34FC /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
+		14400C8E15CA474B004F34FC /* SKProduct+FormattedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+FormattedPrice.h"; sourceTree = "<group>"; };
+		14400C8F15CA474B004F34FC /* SKProduct+FormattedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+FormattedPrice.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		14400C5415CA31F8004F34FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14400C5C15CA31F8004F34FC /* UIKit.framework in Frameworks */,
+				14400C5E15CA31F8004F34FC /* Foundation.framework in Frameworks */,
+				14400C6015CA31F8004F34FC /* CoreGraphics.framework in Frameworks */,
+				14400C7915CA320E004F34FC /* StoreKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14400C4C15CA31F8004F34FC = {
+			isa = PBXGroup;
+			children = (
+				14400C7A15CA3218004F34FC /* FMPurchaseManager */,
+				14400C6115CA31F8004F34FC /* Demo */,
+				14400C5A15CA31F8004F34FC /* Frameworks */,
+				14400C5815CA31F8004F34FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14400C5815CA31F8004F34FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				14400C5715CA31F8004F34FC /* Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		14400C5A15CA31F8004F34FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				14400C7815CA320E004F34FC /* StoreKit.framework */,
+				14400C5B15CA31F8004F34FC /* UIKit.framework */,
+				14400C5D15CA31F8004F34FC /* Foundation.framework */,
+				14400C5F15CA31F8004F34FC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		14400C6115CA31F8004F34FC /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				14400C6A15CA31F8004F34FC /* AppDelegate.h */,
+				14400C6B15CA31F8004F34FC /* AppDelegate.m */,
+				14400C8B15CA42D4004F34FC /* PurchaseViewController.h */,
+				14400C8C15CA42D4004F34FC /* PurchaseViewController.m */,
+				14400C8E15CA474B004F34FC /* SKProduct+FormattedPrice.h */,
+				14400C8F15CA474B004F34FC /* SKProduct+FormattedPrice.m */,
+				14400C6D15CA31F8004F34FC /* MainStoryboard.storyboard */,
+				14400C6215CA31F8004F34FC /* Supporting Files */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		14400C6215CA31F8004F34FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14400C6315CA31F8004F34FC /* Demo-Info.plist */,
+				14400C6415CA31F8004F34FC /* InfoPlist.strings */,
+				14400C6715CA31F8004F34FC /* main.m */,
+				14400C6915CA31F8004F34FC /* Demo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14400C7A15CA3218004F34FC /* FMPurchaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				14400C7B15CA3218004F34FC /* FMPurchaseManager.h */,
+				14400C7C15CA3218004F34FC /* FMPurchaseManager.m */,
+			);
+			name = FMPurchaseManager;
+			path = ../FMPurchaseManager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		14400C5615CA31F8004F34FC /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 14400C7515CA31F8004F34FC /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				14400C5315CA31F8004F34FC /* Sources */,
+				14400C5415CA31F8004F34FC /* Frameworks */,
+				14400C5515CA31F8004F34FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Demo;
+			productName = Demo;
+			productReference = 14400C5715CA31F8004F34FC /* Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		14400C4E15CA31F8004F34FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Flubber Media Ltd";
+			};
+			buildConfigurationList = 14400C5115CA31F8004F34FC /* Build configuration list for PBXProject "Demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 14400C4C15CA31F8004F34FC;
+			productRefGroup = 14400C5815CA31F8004F34FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				14400C5615CA31F8004F34FC /* Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		14400C5515CA31F8004F34FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14400C6615CA31F8004F34FC /* InfoPlist.strings in Resources */,
+				14400C6F15CA31F8004F34FC /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		14400C5315CA31F8004F34FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14400C6815CA31F8004F34FC /* main.m in Sources */,
+				14400C6C15CA31F8004F34FC /* AppDelegate.m in Sources */,
+				14400C7D15CA3218004F34FC /* FMPurchaseManager.m in Sources */,
+				14400C8D15CA42D4004F34FC /* PurchaseViewController.m in Sources */,
+				14400C9015CA474C004F34FC /* SKProduct+FormattedPrice.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		14400C6415CA31F8004F34FC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14400C6515CA31F8004F34FC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		14400C6D15CA31F8004F34FC /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14400C6E15CA31F8004F34FC /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		14400C7315CA31F8004F34FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		14400C7415CA31F8004F34FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		14400C7615CA31F8004F34FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
+				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		14400C7715CA31F8004F34FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo/Demo-Prefix.pch";
+				INFOPLIST_FILE = "Demo/Demo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		14400C5115CA31F8004F34FC /* Build configuration list for PBXProject "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14400C7315CA31F8004F34FC /* Debug */,
+				14400C7415CA31F8004F34FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		14400C7515CA31F8004F34FC /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				14400C7615CA31F8004F34FC /* Debug */,
+				14400C7715CA31F8004F34FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 14400C4E15CA31F8004F34FC /* Project object */;
+}
