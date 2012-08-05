@@ -18,6 +18,10 @@
 		14400C7D15CA3218004F34FC /* FMPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 14400C7C15CA3218004F34FC /* FMPurchaseManager.m */; };
 		14400C8D15CA42D4004F34FC /* PurchaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14400C8C15CA42D4004F34FC /* PurchaseViewController.m */; };
 		14400C9015CA474C004F34FC /* SKProduct+FormattedPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 14400C8F15CA474B004F34FC /* SKProduct+FormattedPrice.m */; };
+		149E0FB315CF062A00FBFF52 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 149E0FAF15CF062A00FBFF52 /* Default@2x~iphone.png */; };
+		149E0FB415CF062A00FBFF52 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 149E0FB015CF062A00FBFF52 /* Default~iphone.png */; };
+		149E0FB515CF062A00FBFF52 /* Icon@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 149E0FB115CF062A00FBFF52 /* Icon@2x~iphone.png */; };
+		149E0FB615CF062A00FBFF52 /* Icon~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 149E0FB215CF062A00FBFF52 /* Icon~iphone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		14400C8C15CA42D4004F34FC /* PurchaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseViewController.m; sourceTree = "<group>"; };
 		14400C8E15CA474B004F34FC /* SKProduct+FormattedPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+FormattedPrice.h"; sourceTree = "<group>"; };
 		14400C8F15CA474B004F34FC /* SKProduct+FormattedPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+FormattedPrice.m"; sourceTree = "<group>"; };
+		149E0FAF15CF062A00FBFF52 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
+		149E0FB015CF062A00FBFF52 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
+		149E0FB115CF062A00FBFF52 /* Icon@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x~iphone.png"; sourceTree = "<group>"; };
+		149E0FB215CF062A00FBFF52 /* Icon~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon~iphone.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +103,7 @@
 				14400C8E15CA474B004F34FC /* SKProduct+FormattedPrice.h */,
 				14400C8F15CA474B004F34FC /* SKProduct+FormattedPrice.m */,
 				14400C6D15CA31F8004F34FC /* MainStoryboard.storyboard */,
+				149E0FAE15CF062A00FBFF52 /* Images */,
 				14400C6215CA31F8004F34FC /* Supporting Files */,
 			);
 			path = Demo;
@@ -119,6 +128,17 @@
 			);
 			name = FMPurchaseManager;
 			path = ../FMPurchaseManager;
+			sourceTree = "<group>";
+		};
+		149E0FAE15CF062A00FBFF52 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				149E0FAF15CF062A00FBFF52 /* Default@2x~iphone.png */,
+				149E0FB015CF062A00FBFF52 /* Default~iphone.png */,
+				149E0FB115CF062A00FBFF52 /* Icon@2x~iphone.png */,
+				149E0FB215CF062A00FBFF52 /* Icon~iphone.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +194,10 @@
 			files = (
 				14400C6615CA31F8004F34FC /* InfoPlist.strings in Resources */,
 				14400C6F15CA31F8004F34FC /* MainStoryboard.storyboard in Resources */,
+				149E0FB315CF062A00FBFF52 /* Default@2x~iphone.png in Resources */,
+				149E0FB415CF062A00FBFF52 /* Default~iphone.png in Resources */,
+				149E0FB515CF062A00FBFF52 /* Icon@2x~iphone.png in Resources */,
+				149E0FB615CF062A00FBFF52 /* Icon~iphone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +328,7 @@
 				14400C7715CA31F8004F34FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
