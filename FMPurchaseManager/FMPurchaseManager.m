@@ -34,7 +34,6 @@
 @property (strong, nonatomic) NSArray *productIdentifiers;
 @property (copy, nonatomic) ProductRequestCompletion productRequestCompletion;
 @property (copy, nonatomic) ProductPurchaseCompletion productPurchaseCompletion;
-@property (copy, nonatomic) ProductRestoreCompletion productRestoreCompletion;
 
 @end
 
@@ -60,11 +59,6 @@
 + (void)setProductPurchaseCompletion:(ProductPurchaseCompletion)productPurchaseCompletion
 {
     [[FMPurchaseManager sharedInstance] setProductPurchaseCompletion:productPurchaseCompletion];
-}
-
-+ (void)setProductRestoreCompletion:(ProductRestoreCompletion)productRestoreCompletion
-{
-    [[FMPurchaseManager sharedInstance] setProductRestoreCompletion:productRestoreCompletion];
 }
 
 + (void)requestProducts:(NSArray *)identifiers
@@ -130,35 +124,19 @@
         switch (transaction.transactionState)
         {
             case SKPaymentTransactionStatePurchased:
-                [self completeTransaction:transaction];
+                _productPurchaseCompletion(transaction, transaction.payment.productIdentifier, nil);
                 break;
             case SKPaymentTransactionStateFailed:
-                [self failedTransaction:transaction];
+                _productPurchaseCompletion(transaction, transaction.payment.productIdentifier, transaction.error);
                 break;
             case SKPaymentTransactionStateRestored:
-                [self restoreTransaction:transaction];
+                _productPurchaseCompletion(transaction, transaction.originalTransaction.payment.productIdentifier, nil);
             default:
                 break;
         }
+        
+        [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
     }
-}
-
-- (void)completeTransaction:(SKPaymentTransaction *)transaction
-{
-    _productPurchaseCompletion(transaction, nil);
-    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-}
-
-- (void)failedTransaction:(SKPaymentTransaction *)transaction
-{
-    _productPurchaseCompletion(transaction, transaction.error);
-    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
-}
-
-- (void)restoreTransaction:(SKPaymentTransaction *)transaction
-{
-    _productRestoreCompletion(transaction, transaction.originalTransaction.payment.productIdentifier);
-    [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
 }
 
 #pragma mark - Utilities

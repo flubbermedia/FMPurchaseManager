@@ -25,18 +25,17 @@
 //
 //  3. This notice may not be removed or altered from any source distribution.
 //
+
 #import <Foundation/Foundation.h>
 #import <StoreKit/StoreKit.h>
 
 typedef void (^ProductRequestCompletion)(NSArray *products, NSArray *invalidProductIdentifiers);
-typedef void (^ProductPurchaseCompletion)(SKPaymentTransaction *transaction, NSError *error);
-typedef void (^ProductRestoreCompletion)(SKPaymentTransaction *transaction, NSString *productIdentifier);
+typedef void (^ProductPurchaseCompletion)(SKPaymentTransaction *transaction, NSString *productIdentifier, NSError *error);
 
 @interface FMPurchaseManager : NSObject <SKPaymentTransactionObserver, SKProductsRequestDelegate>
 
 + (void)setProductRequestCompletion:(ProductRequestCompletion)productRequestCompletion;
 + (void)setProductPurchaseCompletion:(ProductPurchaseCompletion)productPurchaseCompletion;
-+ (void)setProductRestoreCompletion:(ProductRestoreCompletion)productRestoreCompletion;
 
 + (void)requestProducts:(NSArray *)identifiers;
 + (void)buyProduct:(NSString *)identifier;

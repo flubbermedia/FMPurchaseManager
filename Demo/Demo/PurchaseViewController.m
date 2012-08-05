@@ -22,12 +22,8 @@
 {
     [super viewDidLoad];
     
-    NSArray *products = @[
-    //Replace this with your real products
-    //@"com.flubbermedia.product1",
-    //@"com.flubbermedia.product2",
-    //@"com.flubbermedia.product3"
-    ];
+    //setup completion blocks
+    //-----------------------
     
     [FMPurchaseManager setProductRequestCompletion:^(NSArray *products, NSArray *invalidProductIdentifiers) {
         NSLog(@"didReceiveProducts valid(%d) invalid(%d)", products.count, invalidProductIdentifiers.count);
@@ -37,7 +33,8 @@
         });
     }];
     
-    [FMPurchaseManager setProductPurchaseCompletion:^(SKPaymentTransaction *transaction, NSError *error) {
+    [FMPurchaseManager setProductPurchaseCompletion:
+     ^(SKPaymentTransaction *transaction, NSString *productIdentifier, NSError *error) {
         if (error == nil)
         {
             NSLog(@"Purchase completed: %@", transaction.payment.productIdentifier);
@@ -48,9 +45,15 @@
         }
     }];
     
-    [FMPurchaseManager setProductRestoreCompletion:^(SKPaymentTransaction *transaction, NSString *productIdentifier) {
-        NSLog(@"Product restored: %@", productIdentifier);
-    }];
+    //request the products
+    //--------------------
+    
+    NSArray *products = @[
+    //Replace this with your real products
+    //@"com.flubbermedia.product1",
+    //@"com.flubbermedia.product2",
+    //@"com.flubbermedia.product3"
+    ];
     
     [FMPurchaseManager requestProducts:products];
 }
@@ -82,7 +85,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SKProduct *product = [_datasource objectAtIndex:indexPath.row];    
+    //buy a product
+    //-------------
+    
+    SKProduct *product = [_datasource objectAtIndex:indexPath.row];
     [FMPurchaseManager buyProduct:product.productIdentifier];
 }
 
@@ -90,6 +96,9 @@
 
 - (IBAction)restorePurchases:(id)sender
 {
+    //restore the previous purchased products
+    //---------------------------------------
+    
     [FMPurchaseManager restorePurchases];
 }
 
