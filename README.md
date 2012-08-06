@@ -8,7 +8,7 @@ Installation
 ------------
 Add the `<StoreKit/StoreKit.h>` framework and drag the FMPurchaseManager class files into your project.
 
-Setup
+Usage
 -----
 (see sample Xcode project `/Demo`)
 
@@ -42,7 +42,7 @@ First of all you must setup the two blocks that are called during the purchase p
 	
 Once you prepared the completion blocks you can:
 
-* request the product with the related identifiers `[FMPurchaseManager requestProducts:someProducts]`
+* request the products with the related identifiers `[FMPurchaseManager requestProducts:someProducts]`
 * buy a product with its identifier `[FMPurchaseManager buyProduct:anIdentifier]`
 * restore the previously purchased products `[FMPurchaseManager restorePurchases]`
 
