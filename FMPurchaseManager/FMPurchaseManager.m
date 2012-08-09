@@ -123,19 +123,22 @@
     {
         switch (transaction.transactionState)
         {
+            case SKPaymentTransactionStatePurchasing:
+                break;
             case SKPaymentTransactionStatePurchased:
                 _productPurchaseCompletion(transaction, transaction.payment.productIdentifier, nil);
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
                 break;
             case SKPaymentTransactionStateFailed:
                 _productPurchaseCompletion(transaction, transaction.payment.productIdentifier, transaction.error);
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored:
                 _productPurchaseCompletion(transaction, transaction.originalTransaction.payment.productIdentifier, nil);
+                [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
             default:
                 break;
         }
-        
-        [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
     }
 }
 
