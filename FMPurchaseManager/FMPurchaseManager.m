@@ -132,8 +132,8 @@
 
 /*******
 
- NOTE: This method doesn't get called by [SKPaymentQueue restoreCompletedTransactions];
- SKPaymentTransactionStateRestored here is valid only when the user tries to purchase a product already purchased
+ NOTE: Sometimes this method doesn't get called by [SKPaymentQueue restoreCompletedTransactions]; with some test users
+ Carefull when testing!
 
 *******/
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
