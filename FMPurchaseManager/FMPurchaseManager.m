@@ -34,6 +34,7 @@
 @property (strong, nonatomic) NSArray *productIdentifiers;
 @property (copy, nonatomic) ProductRequestCompletion productRequestCompletion;
 @property (copy, nonatomic) ProductPurchaseCompletion productPurchaseCompletion;
+@property (copy, nonatomic) ProductRestoreCompletion productRestoreCompletion;
 
 @end
 
@@ -59,6 +60,11 @@
 + (void)setProductPurchaseCompletion:(ProductPurchaseCompletion)productPurchaseCompletion
 {
     [[FMPurchaseManager sharedInstance] setProductPurchaseCompletion:productPurchaseCompletion];
+}
+
++ (void)setProductRestoreCompletion:(ProductRestoreCompletion)productRestoreCompletion
+{
+    [[FMPurchaseManager sharedInstance] setProductRestoreCompletion:productRestoreCompletion];
 }
 
 + (void)requestProducts:(NSArray *)identifiers
@@ -90,8 +96,11 @@
     }
     else
     {
-        _productRequestCompletion(nil, nil);
-    }
+        if (_productRequestCompletion)
+		{
+			_productRequestCompletion(nil, nil);
+		}
+	}
 }
 
 - (void)buyProduct:(NSString *)identifier
@@ -114,32 +123,64 @@
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response
 {
     self.products = response.products;
-    _productRequestCompletion(response.products, response.invalidProductIdentifiers);
+	if (_productRequestCompletion)
+	{
+		_productRequestCompletion(response.products, response.invalidProductIdentifiers);
+	}
 }
 
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
 {
-    for (SKPaymentTransaction *transaction in transactions)
+	//NSLog(@"paymentQueue updateTransactions | transactions: %d", [queue.transactions count]);
+	for (SKPaymentTransaction *transaction in transactions)
     {
         switch (transaction.transactionState)
         {
             case SKPaymentTransactionStatePurchasing:
                 break;
             case SKPaymentTransactionStatePurchased:
-                _productPurchaseCompletion(transaction, transaction.payment.productIdentifier, nil);
+				if (_productPurchaseCompletion)
+				{
+					_productPurchaseCompletion(transaction, transaction.payment.productIdentifier, nil);
+				}
                 [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
                 break;
             case SKPaymentTransactionStateFailed:
-                _productPurchaseCompletion(transaction, transaction.payment.productIdentifier, transaction.error);
+				if (_productPurchaseCompletion)
+				{
+					_productPurchaseCompletion(transaction, transaction.payment.productIdentifier, transaction.error);
+				}
                 [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
                 break;
             case SKPaymentTransactionStateRestored:
-                _productPurchaseCompletion(transaction, transaction.originalTransaction.payment.productIdentifier, nil);
+				if (_productPurchaseCompletion)
+				{
+					_productPurchaseCompletion(transaction, transaction.originalTransaction.payment.productIdentifier, nil);
+				}
                 [[SKPaymentQueue defaultQueue] finishTransaction:transaction];
+				break;
             default:
                 break;
         }
     }
+}
+
+- (void)paymentQueue:(SKPaymentQueue *)queue restoreCompletedTransactionsFailedWithError:(NSError *)error
+{
+	//NSLog(@"paymentQueue restoreFailed | transactions: %d", [queue.transactions count]);
+	if (_productRestoreCompletion)
+	{
+		_productRestoreCompletion(error);	
+	}
+}
+
+- (void)paymentQueueRestoreCompletedTransactionsFinished:(SKPaymentQueue *)queue
+{
+	//NSLog(@"paymentQueue restoreCompleted | transactions: %d", [queue.transactions count]);
+	if (_productRestoreCompletion)
+	{
+		_productRestoreCompletion(nil);	
+	}
 }
 
 #pragma mark - Utilities

@@ -31,11 +31,13 @@
 
 typedef void (^ProductRequestCompletion)(NSArray *products, NSArray *invalidProductIdentifiers);
 typedef void (^ProductPurchaseCompletion)(SKPaymentTransaction *transaction, NSString *productIdentifier, NSError *error);
+typedef void (^ProductRestoreCompletion)(NSError *error);
 
 @interface FMPurchaseManager : NSObject <SKPaymentTransactionObserver, SKProductsRequestDelegate>
 
 + (void)setProductRequestCompletion:(ProductRequestCompletion)productRequestCompletion;
 + (void)setProductPurchaseCompletion:(ProductPurchaseCompletion)productPurchaseCompletion;
++ (void)setProductRestoreCompletion:(ProductRestoreCompletion)productRestoreCompletion;
 
 + (void)requestProducts:(NSArray *)identifiers;
 + (void)buyProduct:(NSString *)identifier;
