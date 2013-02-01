@@ -190,8 +190,8 @@
 		if ([queue.transactions count] == 0)
 		{
 			NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
-			[errorDetail setValue:@"No In-App purchases available for restore" forKey:NSLocalizedDescriptionKey];
-			error = [NSError errorWithDomain:@"com.flubbermedia.zenview" code:0 userInfo:errorDetail];
+			[errorDetail setValue:@"No available In-App purchases to restore" forKey:NSLocalizedDescriptionKey];
+			error = [NSError errorWithDomain:SKErrorDomain code:SKErrorClientInvalid userInfo:errorDetail];
 		}
 		_productRestoreCompletion(error);
 	}
