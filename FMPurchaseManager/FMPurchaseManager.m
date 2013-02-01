@@ -186,7 +186,14 @@
 	//NSLog(@"paymentQueue restoreCompleted | transactions: %d", [queue.transactions count]);
 	if (_productRestoreCompletion)
 	{
-		_productRestoreCompletion(nil);	
+		NSError *error = nil;
+		if ([queue.transactions count] == 0)
+		{
+			NSMutableDictionary *errorDetail = [NSMutableDictionary dictionary];
+			[errorDetail setValue:@"No In-App purchases available for restore" forKey:NSLocalizedDescriptionKey];
+			error = [NSError errorWithDomain:@"com.flubbermedia.zenview" code:0 userInfo:errorDetail];
+		}
+		_productRestoreCompletion(error);
 	}
 }
 
