@@ -129,6 +129,13 @@
 	}
 }
 
+
+/*******
+
+ NOTE: This method doesn't get called by [SKPaymentQueue restoreCompletedTransactions];
+ SKPaymentTransactionStateRestored here is valid only when the user tries to purchase a product already purchased
+
+*******/
 - (void)paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions
 {
 	//NSLog(@"paymentQueue updateTransactions | transactions: %d", [queue.transactions count]);
